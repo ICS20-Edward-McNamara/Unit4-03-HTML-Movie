@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta Data -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Volume of a sphere calculator" />
+    <meta name="keywords" content="immaculata, ics2o" />
+    <meta name="author" content="Edward Mcnamara" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav1_index/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav1_index/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav1_index/favicon-16x16.png" />
+    <link rel="manifest" href="./fav1_index/site.webmanifest" />
+    <!-- Googles MDl Colour Scheme and Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css" />
+    <!--Style Sheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title> Movie rating calculator </title>
+  </head>
+  <body>
+    <!-- For Googles MDL-->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js">		</script>
+    <script src="./js/script.js"></script>
+    <!-- MDL Header -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title"> Movie rating calculator </span>
+        </div>
+      </header>
+      <!-- Colored text -->
+      <main class="mdl-layout__content">
+        <h3>Please enter your age to determine which rated movie you're allowed to see</h3>
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <center><p>Enter age (Years)</p></center>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="number"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="userAge"
+              min="0"
+              max="120"
+              step="1"
+              />
+            <label class="mdl-textfield__label" for="Age">Age...</label>
+            <span class="mdl-textfield__error">Input is not a valid age</span>
+          </div>
+        </form>
+        <!-- Raised button with ripple -->
+        <button
+        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculate()">
+          Calculate
+        </button>
+        <br/>
+        <p>
+          <div id="result"></div>
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
