@@ -10,20 +10,23 @@
  */
 function calculate() {
   // Getting age from user
-  let userAge =parseFloat(document.getElementById('userAge').value)
+  let userAge = parseInt(document.getElementById('userAge').value)
   let result;
+  const RATED_R = 18
+  const RATED_PG_13 = 13
+  const RATED_G = 8
 
   // if the user's age is greater than or equal to 18 display "You can see and R-rated movie alone, If you're up for it! ;)" 
-  if (userAge >= 18) {
+  if (userAge >= RATED_R) {
     result = "<br>You can see and R-rated movie alone, If you're up for it! ;)"
   // Otherwise, if the users age is greater tha or equal to 13, display "You can see a PG-13 movie alone!"
-  } else if (userAge >= 13){
+  } else if (userAge >= RATED_PG_13){
     result = "<br> You can see a PG-13 movie alone! "
   // Otherwise, if the user's age is greater than or equal to 8, display "You can see a G or PG rated movie alone"
-  } else if (userAge >= 8){
+  } else if (userAge >= RATED_G){
     result = "You can see a G or PG rated movie alone"
-  // Otherwise, if the user's age is less than 8, display "You’re not allowed to go to the movies alone"
-  } else if (userAge < 8){
+  // Otherwise, if the user's age is less than 8 and greater than 0, display "Negative age inputted. Please try again."
+  } else if (userAge < RATED_G && userAge > 0) {
     result = "You’re not allowed to go to the movies alone"
   // Otherwise, they did not enter a valid age.
   } else {
